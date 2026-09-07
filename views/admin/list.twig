@@ -1,0 +1,38 @@
+<!DOCTYPE html><html>
+<head>
+</head>
+<body>
+  <h1>チケット予約 管理画面</h1>
+  コピペ用URL: <input value="{{ base_url }}/entry.php?token=" size="100"><br>
+  <table border="1" cellspacing="0" cellpadding="4">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>購入者名</th>
+        <th>枚数</th>
+        <th>Token</th>
+        <th>作成日時</th>
+        <th>更新日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for purchase in list %}
+        <tr>
+          <td>{{ purchase.id }}</td>
+          <td>{{ purchase.email }}</td>
+          <td>{{ purchase.purchaser_name }}</td>
+          <td>{{ purchase.quantity }}</td>
+          <td>{{ purchase.token }}</td>
+          <td>{{ purchase.created_at }}</td>
+          <td>{{ purchase.updated_at }}</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="7">データがありません</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

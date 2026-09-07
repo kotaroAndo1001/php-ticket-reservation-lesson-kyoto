@@ -1,0 +1,22 @@
+<!DOCTYPE html><html>
+<head>
+</head>
+<body>
+  <h1>チケット予約</h1>
+
+{% if errord|length  %}
+<div>
+  {% for k, v in errord %}
+  {{k}}: {{v}}<br>
+  {% endfor %}
+</div>
+{% endif %}
+
+  <form action="/fin.php" method="post">
+    メールアドレス<input name="email" value="{{ input.email }}"><br>
+    氏名<input name="purchaser_name" value="{{ input.purchaser_name }}"><br>
+    チケット枚数<input name="quantity" value="{{ input.quantity }}"><br>
+    <button>申し込む</button>
+  </form>
+</body>
+</html>

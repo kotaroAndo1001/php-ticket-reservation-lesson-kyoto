@@ -1,0 +1,24 @@
+<!DOCTYPE html><html>
+<head>
+</head>
+<body>
+  <h1>チケット予約 管理画面</h1>
+{% if errord|length  %}
+<div>
+  {% for k, v in errord %}
+  {{k}}: {{v}}<br>
+  {% endfor %}
+</div>
+{% endif %}
+
+  <form action="/admin/login.php" method="post" autocomplete="off">
+    <label for="login_id">ログインID</label>
+    <input type="text" id="login_id" name="login_id" value="{{input.login_id}}" required><br>
+
+    <label for="password">パスワード</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">ログイン</button>
+  </form>
+</body>
+</html>
