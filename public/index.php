@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/initialize.php';
 
-use Twig\Loader\FilesystemLoader;
-use Twig\Environment;
-
-
 
 // セッションの内容を確認
 $input = $_SESSION['input'] ?? [];
