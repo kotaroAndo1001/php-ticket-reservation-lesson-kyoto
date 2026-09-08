@@ -7,6 +7,10 @@ date_default_timezone_set('Asia/Tokyo');
 ob_start();
 session_start();
 
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+ 
+
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
@@ -17,6 +21,7 @@ $twig = new Environment($loader, [
     // 開発時だけ有効化
     // 'strict_variables' => true,
 ]);
+
 
 //DB接続取得
 function getDbh(): \PDO
