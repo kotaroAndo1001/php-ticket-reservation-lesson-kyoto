@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/initialize.php';
+
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 

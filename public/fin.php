@@ -5,9 +5,6 @@ declare(strict_types=1);
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
-// セッション開始
-ob_start();
-session_start();
 
 // email送信用に、テンプレートエンジンを使う
 require_once __DIR__ . '/../vendor/autoload.php';
