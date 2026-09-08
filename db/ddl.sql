@@ -1,4 +1,4 @@
-﻿-- 
+﻿S-- 
 CREATE TABLE `ticket_purchases` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT 'チケット購入ID',
   `email` varbinary(254) NOT NULL COMMENT 'メールアドレス',
