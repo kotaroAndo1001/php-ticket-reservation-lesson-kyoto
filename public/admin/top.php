@@ -15,11 +15,7 @@ $loader = new FilesystemLoader(__DIR__ . '/../../views');
 $twig = new Environment($loader);
 
 // 認可チェック
-if (false === isset($_SESSION['admin_logged_in'])) {
-    // ログイン画面へ
-    header('Location: /admin/index.php');
-    exit;
-}
+require_once __DIR__ . '/authorization.php';
 
 // 表示
 echo $twig->render('admin/top.twig');

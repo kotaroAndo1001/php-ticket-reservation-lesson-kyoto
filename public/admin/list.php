@@ -1,29 +1,29 @@
 <?php
-
+ 
 declare(strict_types=1);
-
+ 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
-
+ 
 // セッション開始
 ob_start();
 session_start();
-
+ 
 // タイムゾーン
 date_default_timezone_set('Asia/Tokyo');
-
+ 
 // テンプレートエンジンを使う
 require_once __DIR__ . '/../../vendor/autoload.php';
 $loader = new FilesystemLoader(__DIR__ . '/../../views');
 $twig = new Environment($loader);
-
+ 
 // 認可チェック
 if (false === isset($_SESSION['admin_logged_in'])) {
     // ログイン画面へ
     header('Location: /admin/index.php');
     exit;
 }
-
+ 
 /* 一覧取得 */
 // DB接続情報
 // DBハンドルの取得
@@ -45,7 +45,7 @@ try {
     echo $e->getMessage();
     exit;
 }
-
+ 
 try {
     // データの登録
     // プリペアドステートメント
@@ -57,7 +57,7 @@ try {
     echo $e->getMessage();
     exit;
 }
-
+ 
 // 表示
 $base_url = 'http://game.m-fr.net:8080/';
 echo $twig->render('admin/list.twig', [
